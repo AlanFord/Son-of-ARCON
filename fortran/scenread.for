@@ -154,7 +154,8 @@ c --- read test output: yes or no ----
       if( (yn .eq. 'y') .or. (yn .eq. 'y') ) test_flg = .true.
 
       if( test_flg ) then
-        write(*,'(2x,a\)' ) 'enter a name for the qa output file: '
+c       write(*,'(2x,a\)' ) 'enter a name for the qa output file: '
+        write(*,'(2x,a$)' ) 'enter a name for the qa output file: '
         read(*,'(a)') qa_file
       endif
 
