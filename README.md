@@ -8,3 +8,6 @@ ARCON96 has gotten long in the tooth.  The source code for the compute module (f
 The source code for the user interface of ARCON96 was written in some sort of Microsoft Visual Basic and was never made publicly available.  This front-end will be rewritten as part of the ARCON-greasepaint project.
 
 The original ARCON96 software was written by J. V. Ramsdell Jr. and C. A. Simonen at the Pacific Northwest National Laboratory, prepared for the U.S. Nuclear Regulatory Commission.  Much more detail can be found in the document NUREG/CR-6331 Rev. 1, "Atomospheric Relative Concentrations in Building Wakes."
+
+// USART2->BRR = ((usartdiv & ~(0xF)) | ((usartdiv & (0xF))>>1));
+		USART2->BRR = ((usartdiv & 0xFFFFFFF0) | ((usartdiv >> 1) & 0x00000007));
